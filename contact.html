@@ -126,26 +126,26 @@
 
         <!-- Form -->
         <div class="contact-form-wrap" data-reveal="right">
-          <form class="contact-form" data-form>
+          <form class="contact-form" data-form data-form-type="contact">
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">First Name</label>
-                <input type="text" class="form-input" placeholder="John" required />
+                <label class="form-label" for="contact-first-name">First Name</label>
+                <input type="text" id="contact-first-name" name="first_name" class="form-input" placeholder="John" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Last Name</label>
-                <input type="text" class="form-input" placeholder="Smith" required />
+                <label class="form-label" for="contact-last-name">Last Name</label>
+                <input type="text" id="contact-last-name" name="last_name" class="form-input" placeholder="Smith" required />
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Email Address</label>
-              <input type="email" class="form-input" placeholder="john@company.co.uk" required />
+              <label class="form-label" for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="john@company.co.uk" required />
             </div>
 
             <div class="form-group">
-              <label class="form-label">Company (Optional)</label>
-              <input type="text" class="form-input" placeholder="Your Company Ltd" />
+              <label class="form-label" for="contact-company">Company (Optional)</label>
+              <input type="text" id="contact-company" name="company" class="form-input" placeholder="Your Company Ltd" />
             </div>
 
             <div class="form-group">
@@ -167,8 +167,8 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Your Message</label>
-              <textarea class="form-textarea" placeholder="Tell us about your project, timeline, or any questions you have…" required></textarea>
+              <label class="form-label" for="contact-message">Your Message</label>
+              <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell us about your project, timeline, or any questions you have…" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
@@ -239,6 +239,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/emailjs-config.js"></script>
   <script src="js/cursor.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/scroll-anim.js"></script>

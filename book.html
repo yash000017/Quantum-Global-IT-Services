@@ -160,32 +160,32 @@
         <div class="book-form-wrap" data-reveal="right">
           <p class="text-label" style="margin-bottom:28px">Fill in the form below</p>
 
-          <form class="book-form" data-form>
+          <form class="book-form" data-form data-form-type="book">
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">First Name *</label>
-                <input type="text" class="form-input" placeholder="John" required />
+                <label class="form-label" for="book-first-name">First Name *</label>
+                <input type="text" id="book-first-name" name="first_name" class="form-input" placeholder="John" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Last Name *</label>
-                <input type="text" class="form-input" placeholder="Smith" required />
+                <label class="form-label" for="book-last-name">Last Name *</label>
+                <input type="text" id="book-last-name" name="last_name" class="form-input" placeholder="Smith" required />
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Email Address *</label>
-              <input type="email" class="form-input" placeholder="john@company.co.uk" required />
+              <label class="form-label" for="book-email">Email Address *</label>
+              <input type="email" id="book-email" name="email" class="form-input" placeholder="john@company.co.uk" required />
             </div>
 
             <div class="form-group">
-              <label class="form-label">Phone Number (Optional)</label>
-              <input type="tel" class="form-input" placeholder="+44 7700 900000" />
+              <label class="form-label" for="book-phone">Phone Number (Optional)</label>
+              <input type="tel" id="book-phone" name="phone" class="form-input" placeholder="+44 7700 900000" />
             </div>
 
             <div class="form-group">
-              <label class="form-label">Company / Organisation</label>
-              <input type="text" class="form-input" placeholder="Your Company Ltd" />
+              <label class="form-label" for="book-company">Company / Organisation</label>
+              <input type="text" id="book-company" name="company" class="form-input" placeholder="Your Company Ltd" />
             </div>
 
             <div class="form-group">
@@ -202,13 +202,13 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Preferred Date / Time</label>
-              <input type="text" class="form-input" placeholder="e.g. Any morning this week, or Tues 3pm" />
+              <label class="form-label" for="book-preferred-time">Preferred Date / Time</label>
+              <input type="text" id="book-preferred-time" name="preferred_time" class="form-input" placeholder="e.g. Any morning this week, or Tues 3pm" />
             </div>
 
             <div class="form-group">
-              <label class="form-label">Briefly, what's your project about? *</label>
-              <textarea class="form-textarea" placeholder="Give us a quick overview — even a few sentences helps us prepare…" required style="min-height:100px"></textarea>
+              <label class="form-label" for="book-message">Briefly, what's your project about? *</label>
+              <textarea id="book-message" name="message" class="form-textarea" placeholder="Give us a quick overview — even a few sentences helps us prepare…" required style="min-height:100px"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
@@ -280,6 +280,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/emailjs-config.js"></script>
   <script src="js/cursor.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/scroll-anim.js"></script>

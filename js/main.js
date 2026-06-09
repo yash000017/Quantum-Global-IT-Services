@@ -26,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Form validation ───────────────────────────────────────────────────────── */
   FormValidation.init();
 
+  /* ── EmailJS ─────────────────────────────────────────────────────────────── */
+  if (isEmailJsConfigured()) {
+    emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+  }
+
   /* ── Contact / Book form handling ────────────────────────────────────────── */
   document.querySelectorAll('[data-form]').forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -62,22 +67,83 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ——— Form submission ————————————————————————————————————————————————————— */
-function handleFormSubmit(form) {
-  const btn        = form.querySelector('[type="submit"]');
-  const originalTxt = btn.textContent;
+async function handleFormSubmit(form) {
+  const btn          = form.querySelector('[type="submit"]');
+  const originalHtml = btn.innerHTML;
+  const formType     = form.dataset.formType || 'contact';
 
-  btn.disabled     = true;
-  btn.textContent  = 'Sending…';
+  btn.disabled    = true;
+  btn.textContent = 'Sending…';
 
-  // Simulate network request
-  setTimeout(() => {
-    showFormSuccess(form);
-    btn.disabled    = false;
-    btn.textContent = originalTxt;
-  }, 1400);
+  try {
+    if (!isEmailJsConfigured()) {
+      throw new Error('EmailJS is not configured. Update js/emailjs-config.js with your credentials.');
+    }
+
+    setEmailJsFields(form, formType);
+    padEmptyFields(form);
+
+    await emailjs.sendForm(
+      EMAILJS_CONFIG.serviceId,
+      EMAILJS_CONFIG.templateId,
+      form
+    );
+
+    btn.disabled  = false;
+    btn.innerHTML = originalHtml;
+    showFormSuccess(form, getSuccessCopy(formType));
+  } catch (err) {
+    console.error('Form submission failed:', err);
+    showFormError(
+      'We couldn\'t send your message right now. Please try again or email us at contact.quantum-it@gmail.com'
+    );
+    btn.disabled  = false;
+    btn.innerHTML = originalHtml;
+  }
 }
 
-function showFormSuccess(form) {
+function setEmailJsFields(form, formType) {
+  const firstName = form.querySelector('[name="first_name"]')?.value.trim() || '';
+  const lastName  = form.querySelector('[name="last_name"]')?.value.trim() || '';
+  const email     = form.querySelector('[name="email"]')?.value.trim() || '';
+
+  setHiddenField(form, 'form_type', formType === 'book' ? 'Book a Meeting' : 'Contact');
+  setHiddenField(form, 'from_name', `${firstName} ${lastName}`.trim() || 'Unknown');
+  setHiddenField(form, 'reply_to', email);
+}
+
+function padEmptyFields(form) {
+  form.querySelectorAll('input[name], textarea[name], select[name]').forEach(field => {
+    if (field.type === 'hidden') return;
+    if (!field.value.trim()) field.value = '—';
+  });
+}
+
+function setHiddenField(form, name, value) {
+  let field = form.querySelector(`input[type="hidden"][name="${name}"]`);
+  if (!field) {
+    field = document.createElement('input');
+    field.type = 'hidden';
+    field.name = name;
+    form.appendChild(field);
+  }
+  field.value = value;
+}
+
+function getSuccessCopy(formType) {
+  if (formType === 'book') {
+    return {
+      title: 'Meeting Request Received',
+      message: 'Thank you for booking. We\'ll confirm your meeting slot within 2 business hours.',
+    };
+  }
+  return {
+    title: 'Message Received',
+    message: 'Thank you for reaching out. A member of our team will be in touch within 24 hours.',
+  };
+}
+
+function showFormSuccess(form, { title, message }) {
   const success = document.createElement('div');
   success.className   = 'form-success';
   success.style.cssText = `
@@ -108,10 +174,10 @@ function showFormSuccess(form) {
         font-size: 1.6rem;
       ">✓</div>
       <h3 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:12px; letter-spacing:-0.02em;">
-        Message Received
+        ${title}
       </h3>
       <p style="font-size:0.95rem; color:var(--t2); line-height:1.7; margin-bottom:32px;">
-        Thank you for reaching out. A member of our team will be in touch within 24 hours.
+        ${message}
       </p>
       <button onclick="this.closest('.form-success').remove()" class="btn btn-ghost btn-sm">
         Close
@@ -123,5 +189,56 @@ function showFormSuccess(form) {
   success.addEventListener('click', (e) => {
     if (e.target === success) success.remove();
   });
+
   form.reset();
+  CustomSelect.instances?.forEach(instance => instance.syncFromNative());
+}
+
+function showFormError(message) {
+  const error = document.createElement('div');
+  error.className = 'form-success';
+  error.style.cssText = `
+    position: fixed; inset: 0; z-index: 5000;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(2,2,9,0.85);
+    backdrop-filter: blur(12px);
+    animation: fadeIn 0.3s ease;
+  `;
+
+  error.innerHTML = `
+    <div style="
+      background: var(--bg-overlay);
+      border: 1px solid rgba(255,107,107,0.3);
+      border-radius: 24px;
+      padding: 48px 56px;
+      text-align: center;
+      max-width: 480px;
+      animation: scaleIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    ">
+      <div style="
+        width: 64px; height: 64px;
+        border-radius: 50%;
+        background: var(--error-dim);
+        border: 1px solid rgba(255,107,107,0.3);
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 24px;
+        font-size: 1.6rem;
+        color: var(--error);
+      ">!</div>
+      <h3 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:12px; letter-spacing:-0.02em;">
+        Something Went Wrong
+      </h3>
+      <p style="font-size:0.95rem; color:var(--t2); line-height:1.7; margin-bottom:32px;">
+        ${message}
+      </p>
+      <button onclick="this.closest('.form-success').remove()" class="btn btn-ghost btn-sm">
+        Close
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(error);
+  error.addEventListener('click', (e) => {
+    if (e.target === error) error.remove();
+  });
 }

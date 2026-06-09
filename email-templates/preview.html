@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Template Preview — Quantum IT</title>
+  <style>
+    body { margin: 0; background: #111; }
+    .preview-bar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 12px; align-items: center; justify-content: center;
+      padding: 12px 16px;
+      background: #0b0b1e; border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-family: Arial, sans-serif; font-size: 13px; color: #6e6e8a;
+    }
+    .preview-bar button {
+      padding: 8px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05); color: #f0f0fa; cursor: pointer;
+    }
+    .preview-bar button.active { border-color: #00d4ff; color: #00d4ff; }
+    iframe { display: block; width: 100%; min-height: 100vh; border: 0; background: #020209; }
+  </style>
+</head>
+<body>
+  <div class="preview-bar">
+    <span>Preview sample data:</span>
+    <button type="button" class="active" data-sample="book">Book a Meeting</button>
+    <button type="button" data-sample="contact">Contact Form</button>
+  </div>
+  <iframe id="preview" title="Email preview"></iframe>
+
+  <script>
+    const samples = {
+      book: {
+        form_type: 'Book a Meeting',
+        from_name: 'John Smith',
+        email: 'john@company.co.uk',
+        reply_to: 'john@company.co.uk',
+        company: 'Acme Ltd',
+        phone: '+44 7700 900000',
+        service: '—',
+        meeting_type: 'New Project Discovery',
+        preferred_time: 'Tuesday morning or Wed 3pm',
+        message: 'We need a custom client portal with SSO and reporting dashboards. Timeline is Q3.',
+      },
+      contact: {
+        form_type: 'Contact',
+        from_name: 'Sarah Jones',
+        email: 'sarah@startup.io',
+        reply_to: 'sarah@startup.io',
+        company: 'Startup IO',
+        phone: '—',
+        service: 'AI & Machine Learning',
+        meeting_type: '—',
+        preferred_time: '—',
+        message: 'Interested in exploring ML for our customer support workflow. Can we arrange a call?',
+      },
+    };
+
+    async function render(sample) {
+      const res = await fetch('form-notification.html');
+      let html = await res.text();
+      Object.entries(samples[sample]).forEach(([key, value]) => {
+        html = html.replaceAll(`{{${key}}}`, value);
+      });
+      document.getElementById('preview').srcdoc = html;
+    }
+
+    document.querySelectorAll('[data-sample]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-sample]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        render(btn.dataset.sample);
+      });
+    });
+
+    render('book');
+  </script>
+</body>
+</html>

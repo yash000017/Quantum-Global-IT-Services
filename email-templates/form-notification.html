@@ -1,0 +1,166 @@
+<!--
+  QUANTUM IT — EmailJS HTML Template
+  ==================================
+  1. EmailJS → Email Templates → Create / Edit template
+  2. Content tab → switch to HTML mode
+  3. Paste everything INSIDE the <body> tag below (from the outer table)
+  4. Subject: New {{form_type}} enquiry from {{from_name}}
+  5. Reply To field: {{reply_to}}
+  6. To Email: your inbox (contact.quantum-it@gmail.com)
+
+  Preview locally: open email-templates/preview.html in a browser
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>New enquiry — Quantum IT</title>
+</head>
+<body style="margin:0;padding:0;background-color:#020209;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;">
+
+  <!-- Preheader (hidden preview text) -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+    New {{form_type}} submission from {{from_name}} — {{email}}
+  </div>
+
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#020209;">
+    <tr>
+      <td align="center" style="padding:40px 16px;">
+
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;">
+
+          <!-- Gradient accent bar -->
+          <tr>
+            <td style="height:4px;background:linear-gradient(90deg,#00d4ff 0%,#7c3aed 100%);border-radius:16px 16px 0 0;font-size:0;line-height:0;">&nbsp;</td>
+          </tr>
+
+          <!-- Main card -->
+          <tr>
+            <td style="background-color:#0b0b1e;border:1px solid rgba(255,255,255,0.1);border-top:none;border-radius:0 0 16px 16px;padding:0;">
+
+              <!-- Header -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="padding:32px 32px 24px;border-bottom:1px solid rgba(255,255,255,0.07);">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                      <tr>
+                        <td style="width:40px;height:40px;background:linear-gradient(135deg,#00d4ff 0%,#7c3aed 100%);border-radius:10px;text-align:center;vertical-align:middle;">
+                          <span style="font-size:18px;font-weight:800;color:#020209;line-height:40px;">Q</span>
+                        </td>
+                        <td style="padding-left:12px;vertical-align:middle;">
+                          <p style="margin:0;font-size:16px;font-weight:700;color:#f0f0fa;letter-spacing:-0.01em;">Quantum <span style="color:#00d4ff;">IT</span></p>
+                          <p style="margin:4px 0 0;font-size:11px;font-weight:600;color:#6e6e8a;text-transform:uppercase;letter-spacing:0.1em;">New Website Enquiry</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Badge + title -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="padding:28px 32px 8px;">
+                    <span style="display:inline-block;padding:5px 12px;background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.25);border-radius:999px;font-size:11px;font-weight:700;color:#00d4ff;text-transform:uppercase;letter-spacing:0.08em;">{{form_type}}</span>
+                    <h1 style="margin:16px 0 0;font-size:24px;font-weight:700;color:#f0f0fa;letter-spacing:-0.02em;line-height:1.3;">{{from_name}}</h1>
+                    <p style="margin:8px 0 0;font-size:14px;color:#6e6e8a;">
+                      Submitted via <a href="mailto:{{email}}" style="color:#00d4ff;text-decoration:none;">{{email}}</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Details grid -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="padding:16px 32px 8px;">
+
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;">
+                      <tr>
+                        <td style="padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:700;color:#6e6e8a;text-transform:uppercase;letter-spacing:0.08em;">Company</p>
+                          <p style="margin:0;font-size:14px;color:#f0f0fa;line-height:1.5;">{{company}}</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:700;color:#6e6e8a;text-transform:uppercase;letter-spacing:0.08em;">Phone</p>
+                          <p style="margin:0;font-size:14px;color:#f0f0fa;line-height:1.5;">{{phone}}</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:700;color:#6e6e8a;text-transform:uppercase;letter-spacing:0.08em;">Service of Interest</p>
+                          <p style="margin:0;font-size:14px;color:#f0f0fa;line-height:1.5;">{{service}}</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:700;color:#6e6e8a;text-transform:uppercase;letter-spacing:0.08em;">Meeting Type</p>
+                          <p style="margin:0;font-size:14px;color:#f0f0fa;line-height:1.5;">{{meeting_type}}</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:16px 18px;">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:700;color:#6e6e8a;text-transform:uppercase;letter-spacing:0.08em;">Preferred Date / Time</p>
+                          <p style="margin:0;font-size:14px;color:#f0f0fa;line-height:1.5;">{{preferred_time}}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Message -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="padding:16px 32px 28px;">
+                    <p style="margin:0 0 10px;font-size:10px;font-weight:700;color:#6e6e8a;text-transform:uppercase;letter-spacing:0.08em;">Message</p>
+                    <div style="padding:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-left:3px solid #00d4ff;border-radius:12px;">
+                      <p style="margin:0;font-size:14px;color:#f0f0fa;line-height:1.7;white-space:pre-wrap;">{{message}}</p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- CTA -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="padding:0 32px 32px;">
+                    <a href="mailto:{{reply_to}}" style="display:inline-block;padding:14px 28px;background:linear-gradient(130deg,#00d4ff 0%,#7c3aed 100%);border-radius:999px;font-size:14px;font-weight:600;color:#020209;text-decoration:none;">Reply to {{from_name}}</a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Footer -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="padding:20px 32px;border-top:1px solid rgba(255,255,255,0.07);background:rgba(0,0,0,0.2);border-radius:0 0 16px 16px;">
+                    <p style="margin:0;font-size:12px;color:#6e6e8a;line-height:1.6;">
+                      Quantum Global IT Services Ltd · London, United Kingdom<br />
+                      This email was sent from the website contact form.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Bottom spacer -->
+          <tr>
+            <td style="padding-top:24px;text-align:center;">
+              <p style="margin:0;font-size:11px;color:#2e2e50;">© Quantum Global IT Services Ltd</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
