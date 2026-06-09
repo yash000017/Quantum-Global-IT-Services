@@ -43,18 +43,35 @@
       <a href="book.html" class="btn btn-primary btn-sm">Book a Meeting</a>
     </div>
 
-    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <button class="nav-burger" id="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile Nav -->
-  <div id="nav-mobile">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="book.html">Book a Meeting</a>
+  <div id="nav-mobile" class="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile__backdrop" data-nav-close></div>
+    <div class="nav-mobile__panel" role="dialog" aria-modal="true" aria-label="Site navigation">
+      <div class="nav-mobile__header">
+        <a href="index.html" class="nav-mobile__logo nav-logo">
+          <img src="assets/logo-mark.svg" alt="" class="nav-logo-img">
+          <span>Quantum <span style="font-weight:600;color:var(--cyan)">IT</span></span>
+        </a>
+        <button type="button" class="nav-mobile__close" id="nav-mobile-close" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-mobile__links" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-mobile__footer">
+        <a href="book.html" class="btn btn-primary btn-lg nav-mobile__cta">Book a Meeting</a>
+      </div>
+    </div>
   </div>
 
   <!-- ── Hero ───────────────────────────────────────────────────────────── -->
