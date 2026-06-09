@@ -22,6 +22,7 @@ const EMAILJS_CONFIG = {
   publicKey:  'eQKLHJ_WJi01mnFYt',
   serviceId:  'service_n6ivesd',
   templateId: 'template_yafxdca',
+  contactEmail: 'contact.quantum-it@gmail.com',
 };
 
 function isEmailJsConfigured() {

@@ -94,9 +94,7 @@ async function handleFormSubmit(form) {
     showFormSuccess(form, getSuccessCopy(formType));
   } catch (err) {
     console.error('Form submission failed:', err);
-    showFormError(
-      'We couldn\'t send your message right now. Please try again or email us at contact.quantum-it@gmail.com'
-    );
+    showFormError();
     btn.disabled  = false;
     btn.innerHTML = originalHtml;
   }
@@ -194,10 +192,11 @@ function showFormSuccess(form, { title, message }) {
   CustomSelect.instances?.forEach(instance => instance.syncFromNative());
 }
 
-function showFormError(message) {
+function showFormError() {
+  const email = EMAILJS_CONFIG.contactEmail || 'contact.quantum-it@gmail.com';
+
   const error = document.createElement('div');
-  console.log(message);
-  error.className = 'form-success';
+  error.className = 'form-error-modal';
   error.style.cssText = `
     position: fixed; inset: 0; z-index: 5000;
     display: flex; align-items: center; justify-content: center;
@@ -227,18 +226,35 @@ function showFormError(message) {
         color: var(--error);
       ">!</div>
       <h3 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:12px; letter-spacing:-0.02em;">
-        Something Went Wrong
+        Couldn't Send Your Message
       </h3>
-      <p style="font-size:0.95rem; color:var(--t2); line-height:1.7; margin-bottom:32px;">
-        ${message}
+      <p style="font-size:0.95rem; color:var(--t2); line-height:1.7; margin-bottom:24px;">
+        Something went wrong on our end. Please try again in a moment, or email us directly at:
       </p>
-      <button onclick="this.closest('.form-success').remove()" class="btn btn-ghost btn-sm">
-        Close
-      </button>
+      <a href="mailto:${email}" style="
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--cyan);
+        text-decoration: none;
+        padding: 14px 24px;
+        margin-bottom: 32px;
+        border: 1px solid rgba(0,212,255,0.3);
+        border-radius: 12px;
+        background: var(--cyan-dim);
+        word-break: break-all;
+      ">${email}</a>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="mailto:${email}" class="btn btn-primary btn-sm">Email Us Instead</a>
+        <button type="button" class="btn btn-ghost btn-sm form-error-modal__close">Close</button>
+      </div>
     </div>
   `;
 
   document.body.appendChild(error);
+
+  error.querySelector('.form-error-modal__close').addEventListener('click', () => error.remove());
   error.addEventListener('click', (e) => {
     if (e.target === error) error.remove();
   });
