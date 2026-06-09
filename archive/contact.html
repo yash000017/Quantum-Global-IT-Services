@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Quantum Global IT Services</title>
+  <meta name="description" content="Get in touch with Quantum Global IT Services. We'd love to hear about your project." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/inner.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300d4ff'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='800' fill='%23020209' font-family='Arial'>Q</text></svg>" />
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">Q</div>
+      <span>Quantum Global <span style="font-weight:400;color:var(--t2)">IT</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="book.html" class="btn btn-ghost btn-sm">Book a Meeting</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div id="nav-mobile">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html">Book a Meeting</a>
+  </div>
+
+  <!-- ── Page Hero ──────────────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="orb orb-cyan page-hero-orb-1" style="width:400px;height:400px;opacity:0.15;filter:blur(80px)"></div>
+    <div class="orb orb-purple page-hero-orb-2" style="width:350px;height:350px;opacity:0.1;filter:blur(80px)"></div>
+
+    <div class="container">
+      <div class="section-label hero-anim-1">
+        <span class="text-label">Get In Touch</span>
+      </div>
+      <h1 class="text-display hero-anim-2" style="max-width:600px">
+        Let's <span class="grad-text">Talk.</span>
+      </h1>
+      <p class="hero-sub hero-anim-3" style="max-width:500px;margin-top:24px">
+        Have a project in mind? A question? Or just want to see if we're the right fit?
+        We're all ears.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Contact Section ────────────────────────────────────────────────── -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Info -->
+        <div class="contact-info" data-reveal="left">
+          <h2>We respond within <span class="grad-text">24 hours.</span></h2>
+          <p>
+            Whether you're ready to kick off a project, need a quote, or just want to
+            explore possibilities — drop us a message and we'll get right back to you.
+          </p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:hello@quantumglobal.co.uk" style="color:var(--cyan)">hello@quantumglobal.co.uk</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+441234567890" style="color:var(--t1)">+44 (0) 1234 567 890</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <h4>Location</h4>
+                <p>London, United Kingdom</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div>
+                <h4>Business Hours</h4>
+                <p>Mon–Fri, 9:00 AM – 6:00 PM GMT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap" data-reveal="right">
+          <form class="contact-form" data-form>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" placeholder="john@company.co.uk" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Company (Optional)</label>
+              <input type="text" class="form-input" placeholder="Your Company Ltd" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Service of Interest</label>
+              <select class="form-select form-input">
+                <option value="" disabled selected>Select a service…</option>
+                <option>Software Development</option>
+                <option>Web Development</option>
+                <option>Mobile App Development</option>
+                <option>Cloud &amp; Infrastructure</option>
+                <option>Cybersecurity</option>
+                <option>IT Consulting</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Your Message</label>
+              <textarea class="form-textarea" placeholder="Tell us about your project, timeline, or any questions you have…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+              Send Message
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <p class="form-submit-note">
+              We respect your privacy. Your details are never shared with third parties.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.1rem">
+          <div class="nav-logo-mark">Q</div>
+          Quantum Global IT
+        </a>
+        <p>UK-based IT services company delivering world-class software, web, app and cloud solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Software Development</a></li>
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile Apps</a></li>
+          <li><a href="services.html">Cloud &amp; DevOps</a></li>
+          <li><a href="services.html">Cybersecurity</a></li>
+          <li><a href="services.html">IT Support</a></li>
+          <li><a href="services.html">Managed IT Services</a></li>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="book.html">Book a Meeting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@quantumglobal.co.uk">hello@quantumglobal.co.uk</a></li>
+          <li><a href="tel:+441234567890">+44 (0) 1234 567 890</a></li>
+          <li><a href="#">London, United Kingdom</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Quantum Global IT Services Ltd. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="GitHub">gh</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/scroll-anim.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

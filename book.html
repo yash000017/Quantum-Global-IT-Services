@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Meeting — Quantum Global IT Services Ltd</title>
+  <meta name="description" content="Book a free 30-minute discovery call with the Quantum IT team. Let's discuss your project." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/inner.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300d4ff'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='800' fill='%23020209' font-family='Arial'>Q</text></svg>" />
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-mark.svg" alt="Quantum IT" class="nav-logo-img">
+      <span>Quantum <span style="font-weight:600;color:var(--cyan)">IT</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="book.html" class="btn btn-ghost btn-sm">Book a Meeting</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div id="nav-mobile">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html">Book a Meeting</a>
+  </div>
+
+  <!-- ── Page Hero ──────────────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="orb orb-cyan page-hero-orb-1" style="width:400px;height:400px;opacity:0.15;filter:blur(80px)"></div>
+    <div class="orb orb-purple page-hero-orb-2" style="width:350px;height:350px;opacity:0.1;filter:blur(80px)"></div>
+
+    <div class="container">
+      <div class="section-label hero-anim-1">
+        <span class="text-label">Free Discovery Call</span>
+      </div>
+      <h1 class="text-display hero-anim-2" style="max-width:700px">
+        Book a <span class="grad-text">Meeting.</span>
+      </h1>
+      <p class="hero-sub hero-anim-3" style="max-width:520px;margin-top:24px">
+        30 minutes. No commitment. No sales pitch.
+        Just an honest conversation about your project and how we can help.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Book Section ───────────────────────────────────────────────────── -->
+  <section class="book-section">
+    <div class="container">
+      <div class="book-layout">
+
+        <!-- Info -->
+        <div class="book-info" data-reveal="left">
+          <h2>What to <span class="grad-text">expect.</span></h2>
+          <p>
+            Our discovery calls are relaxed and productive. Come as you are — with an idea,
+            a problem, or just curiosity. We'll ask the right questions and tell you
+            exactly how we can help.
+          </p>
+
+          <div class="meeting-types">
+
+            <div class="meeting-type">
+              <div class="meeting-type-icon">🚀</div>
+              <div>
+                <h4>New Project Discovery</h4>
+                <p>You have an idea or brief — let's scope it out together.</p>
+              </div>
+            </div>
+
+            <div class="meeting-type">
+              <div class="meeting-type-icon">🔍</div>
+              <div>
+                <h4>Technical Consultation</h4>
+                <p>A specific challenge you need expert eyes on.</p>
+              </div>
+            </div>
+
+            <div class="meeting-type">
+              <div class="meeting-type-icon">🤝</div>
+              <div>
+                <h4>Partnership Exploration</h4>
+                <p>Looking for a long-term technology partner? Let's talk.</p>
+              </div>
+            </div>
+
+            <div class="meeting-type">
+              <div class="meeting-type-icon">💡</div>
+              <div>
+                <h4>Just an Idea</h4>
+                <p>Not sure where to start? That's our favourite kind of call.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- What happens next -->
+          <div style="margin-top:40px; padding:24px; border:1px solid var(--border); border-radius:16px; background:var(--bg-card)">
+            <p class="text-label" style="margin-bottom:14px">After the call</p>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <span style="color:var(--cyan);font-weight:700;font-size:0.85rem;flex-shrink:0">01</span>
+                <span class="text-small">You receive a written summary of what we discussed</span>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <span style="color:var(--cyan);font-weight:700;font-size:0.85rem;flex-shrink:0">02</span>
+                <span class="text-small">We prepare a tailored proposal within 48 hours if applicable</span>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <span style="color:var(--cyan);font-weight:700;font-size:0.85rem;flex-shrink:0">03</span>
+                <span class="text-small">Zero pressure — it's your decision, always</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Form -->
+        <div class="book-form-wrap" data-reveal="right">
+          <p class="text-label" style="margin-bottom:28px">Fill in the form below</p>
+
+          <form class="book-form" data-form>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-input" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <input type="text" class="form-input" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" placeholder="john@company.co.uk" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Phone Number (Optional)</label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Company / Organisation</label>
+              <input type="text" class="form-input" placeholder="Your Company Ltd" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Meeting Type *</label>
+              <select class="form-select form-input" required>
+                <option value="" disabled selected>What's this about?</option>
+                <option>New Project Discovery</option>
+                <option>Technical Consultation</option>
+                <option>Partnership Exploration</option>
+                <option>Just an Idea</option>
+                <option>Pricing Enquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Preferred Date / Time</label>
+              <input type="text" class="form-input" placeholder="e.g. Any morning this week, or Tues 3pm" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Briefly, what's your project about? *</label>
+              <textarea class="form-textarea" placeholder="Give us a quick overview — even a few sentences helps us prepare…" required style="min-height:100px"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+              Request Meeting
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </button>
+
+            <p class="form-submit-note">
+              We'll confirm your meeting slot within 2 business hours. Calls are held via Google Meet or Microsoft Teams.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.1rem">
+          <img src="assets/logo-mark.svg" alt="Quantum IT" class="nav-logo-img">
+          Quantum IT</a>
+        <p>Quantum Global IT Services Ltd — delivering world-class software, web, app and cloud solutions across the UK.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Software Development</a></li>
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile Apps</a></li>
+          <li><a href="services.html">Cloud &amp; DevOps</a></li>
+          <li><a href="services.html">Cybersecurity</a></li>
+          <li><a href="services.html">IT Support</a></li>
+          <li><a href="services.html">Managed IT Services</a></li>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="book.html">Book a Meeting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact.quantum-it@gmail.com">contact.quantum-it@gmail.com</a></li>
+          <li><a href="#">London, United Kingdom</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Quantum Global IT Services Ltd. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="GitHub">gh</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/scroll-anim.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

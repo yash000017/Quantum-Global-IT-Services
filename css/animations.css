@@ -1,0 +1,127 @@
+/* ==========================================================================
+   ANIMATIONS.CSS — Keyframes & scroll-reveal utilities
+   ========================================================================== */
+
+/* ——— Keyframes ————————————————————————————————————————————————————————— */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.5; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+@keyframes cursor-enter {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes borderTrace {
+  0%   { clip-path: inset(0 100% 100% 0); }
+  25%  { clip-path: inset(0 0 100% 0); }
+  50%  { clip-path: inset(0 0 0 0); }
+  75%  { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0 100% 100% 0); }
+}
+
+/* ——— Scroll Reveal — initial hidden states ————————————————————————————— */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+[data-reveal="up"]    { transform: translateY(50px); }
+[data-reveal="down"]  { transform: translateY(-30px); }
+[data-reveal="left"]  { transform: translateX(-50px); }
+[data-reveal="right"] { transform: translateX(50px); }
+[data-reveal="scale"] { transform: scale(0.88); }
+[data-reveal="fade"]  { transform: none; }
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Stagger delays */
+[data-delay="100"] { transition-delay: 0.1s; }
+[data-delay="200"] { transition-delay: 0.2s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="400"] { transition-delay: 0.4s; }
+[data-delay="500"] { transition-delay: 0.5s; }
+[data-delay="600"] { transition-delay: 0.6s; }
+[data-delay="700"] { transition-delay: 0.7s; }
+
+/* ——— Hero entrance animations ————————————————————————————————————————— */
+.hero-anim-1 {
+  animation: fadeUp 0.9s var(--ease) 0.3s both;
+}
+.hero-anim-2 {
+  animation: fadeUp 0.9s var(--ease) 0.5s both;
+}
+.hero-anim-3 {
+  animation: fadeUp 0.9s var(--ease) 0.7s both;
+}
+.hero-anim-4 {
+  animation: fadeUp 0.9s var(--ease) 0.9s both;
+}
+.hero-anim-fade {
+  animation: fadeIn 1.2s var(--ease) 0.2s both;
+}
+
+/* ——— Utility ——————————————————————————————————————————————————————————— */
+.anim-float    { animation: float 6s ease-in-out infinite; }
+.anim-spin     { animation: spin-slow 20s linear infinite; }
+.anim-pulse    { animation: glow-pulse 3s ease-in-out infinite; }

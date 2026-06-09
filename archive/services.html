@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Quantum Global IT Services</title>
+  <meta name="description" content="Explore our full range of IT services — software development, web, mobile apps, cloud, cybersecurity and IT consulting." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/inner.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300d4ff'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='800' fill='%23020209' font-family='Arial'>Q</text></svg>" />
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">Q</div>
+      <span>Quantum Global <span style="font-weight:400;color:var(--t2)">IT</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="book.html" class="btn btn-ghost btn-sm">Book a Meeting</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div id="nav-mobile">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="book.html">Book a Meeting</a>
+  </div>
+
+  <!-- ── Page Hero ──────────────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="orb orb-cyan page-hero-orb-1" style="width:500px;height:500px;opacity:0.15;filter:blur(80px)"></div>
+    <div class="orb orb-purple page-hero-orb-2" style="width:400px;height:400px;opacity:0.12;filter:blur(80px)"></div>
+
+    <div class="container">
+      <div class="section-label hero-anim-1">
+        <span class="text-label">What We Build</span>
+      </div>
+      <h1 class="text-display hero-anim-2" style="max-width:700px">
+        Our <span class="grad-text">Services</span>
+      </h1>
+      <p class="hero-sub hero-anim-3" style="max-width:560px;margin-top:24px">
+        From first line of code to full-scale deployment — we deliver technology
+        that works, scales, and pays for itself.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Services Full Grid ─────────────────────────────────────────────── -->
+  <section class="services-full">
+    <div class="container">
+
+      <div class="services-full-grid">
+
+        <!-- 01 -->
+        <div class="card card-glow service-full-card" data-num="01" data-reveal="up" data-delay="100">
+          <div class="card-icon">⚡</div>
+          <h3>Software Development</h3>
+          <p>Bespoke software solutions engineered from the ground up. We tackle complexity head-on and deliver robust, scalable systems that fit your exact requirements — not the other way around.</p>
+          <ul class="service-list">
+            <li>Custom web applications &amp; platforms</li>
+            <li>API design &amp; integration</li>
+            <li>Legacy system modernisation</li>
+            <li>SaaS product development</li>
+            <li>Microservices &amp; distributed systems</li>
+          </ul>
+        </div>
+
+        <!-- 02 -->
+        <div class="card card-glow service-full-card" data-num="02" data-reveal="up" data-delay="200">
+          <div class="card-icon" style="background:var(--purple-dim);border-color:rgba(124,58,237,.2)">🌐</div>
+          <h3>Web Development</h3>
+          <p>High-performance websites and web applications that deliver measurable results. We obsess over speed, accessibility, and conversion — because your website is your most valuable sales asset.</p>
+          <ul class="service-list">
+            <li>Corporate &amp; marketing websites</li>
+            <li>E-commerce platforms</li>
+            <li>React / Next.js applications</li>
+            <li>CMS implementation (WordPress, Sanity)</li>
+            <li>Performance optimisation &amp; SEO</li>
+          </ul>
+        </div>
+
+        <!-- 03 -->
+        <div class="card card-glow service-full-card" data-num="03" data-reveal="up" data-delay="100">
+          <div class="card-icon">📱</div>
+          <h3>Mobile App Development</h3>
+          <p>Native and cross-platform mobile apps that users download, engage with, and keep. We design for real user behaviour and build for AppStore approval and high ratings.</p>
+          <ul class="service-list">
+            <li>iOS &amp; Android native apps</li>
+            <li>React Native cross-platform</li>
+            <li>Flutter development</li>
+            <li>App Store submission &amp; optimisation</li>
+            <li>Push notifications &amp; analytics</li>
+          </ul>
+        </div>
+
+        <!-- 04 -->
+        <div class="card card-glow service-full-card" data-num="04" data-reveal="up" data-delay="200">
+          <div class="card-icon purple">☁️</div>
+          <h3>Cloud &amp; Infrastructure</h3>
+          <p>Architect and manage cloud environments built for reliability, security, and performance. Whether you're migrating legacy systems or building cloud-native from day one, we've got you covered.</p>
+          <ul class="service-list">
+            <li>AWS &amp; Azure architecture</li>
+            <li>Cloud migration &amp; lift-and-shift</li>
+            <li>CI/CD pipeline setup</li>
+            <li>Docker &amp; Kubernetes orchestration</li>
+            <li>Infrastructure-as-code (Terraform)</li>
+          </ul>
+        </div>
+
+        <!-- 05 -->
+        <div class="card card-glow service-full-card" data-num="05" data-reveal="up" data-delay="100">
+          <div class="card-icon">🛡️</div>
+          <h3>Cybersecurity</h3>
+          <p>Proactive security built into everything we do. We also offer standalone security services for organisations that need to identify vulnerabilities and achieve compliance.</p>
+          <ul class="service-list">
+            <li>Penetration testing &amp; vulnerability assessment</li>
+            <li>ISO 27001 &amp; Cyber Essentials support</li>
+            <li>GDPR compliance consulting</li>
+            <li>Security code review</li>
+            <li>Incident response planning</li>
+          </ul>
+        </div>
+
+        <!-- 06 -->
+        <div class="card card-glow service-full-card" data-num="06" data-reveal="up" data-delay="200">
+          <div class="card-icon purple">🧠</div>
+          <h3>IT Consulting &amp; Strategy</h3>
+          <p>Strategic technology guidance that aligns your IT investments with your business objectives. We bring clarity to complex decisions and help you build a roadmap that actually delivers ROI.</p>
+          <ul class="service-list">
+            <li>Technology roadmapping</li>
+            <li>Digital transformation strategy</li>
+            <li>CTO-as-a-service</li>
+            <li>Vendor selection &amp; due diligence</li>
+            <li>AI &amp; automation strategy</li>
+          </ul>
+        </div>
+
+        <!-- 07 -->
+        <div class="card card-glow service-full-card" data-num="07" data-reveal="up" data-delay="100">
+          <div class="card-icon">🎧</div>
+          <h3>IT Support &amp; Helpdesk</h3>
+          <p>Reliable, responsive IT support for your business — from day-to-day troubleshooting to strategic issue resolution. We keep your people productive and your systems running smoothly.</p>
+          <ul class="service-list">
+            <li>1st, 2nd &amp; 3rd line support</li>
+            <li>Remote &amp; on-site assistance</li>
+            <li>SLA-backed response times</li>
+            <li>Hardware &amp; software troubleshooting</li>
+            <li>User onboarding &amp; IT induction</li>
+          </ul>
+        </div>
+
+        <!-- 08 -->
+        <div class="card card-glow service-full-card" data-num="08" data-reveal="up" data-delay="200">
+          <div class="card-icon purple">🔧</div>
+          <h3>Managed IT Services</h3>
+          <p>Take the burden of IT management off your team entirely. We proactively monitor, maintain and optimise your infrastructure so issues are resolved before they ever affect your business.</p>
+          <ul class="service-list">
+            <li>24/7 infrastructure monitoring</li>
+            <li>Patch management &amp; updates</li>
+            <li>Backup &amp; disaster recovery</li>
+            <li>Network management &amp; optimisation</li>
+            <li>Monthly reporting &amp; insights</li>
+          </ul>
+        </div>
+
+        <!-- 09 -->
+        <div class="card card-glow service-full-card" data-num="09" data-reveal="up" data-delay="100">
+          <div class="card-icon">🤖</div>
+          <h3>AI &amp; Automation</h3>
+          <p>Integrate artificial intelligence and intelligent automation into your workflows to eliminate repetitive tasks, surface actionable insights, and give your team a genuine competitive edge.</p>
+          <ul class="service-list">
+            <li>AI-powered application development</li>
+            <li>Machine learning model integration</li>
+            <li>Robotic process automation (RPA)</li>
+            <li>Natural language processing (NLP)</li>
+            <li>AI strategy &amp; proof-of-concept</li>
+          </ul>
+        </div>
+
+        <!-- 10 -->
+        <div class="card card-glow service-full-card" data-num="10" data-reveal="up" data-delay="200">
+          <div class="card-icon purple">📊</div>
+          <h3>Data &amp; Analytics</h3>
+          <p>Turn raw data into decisions. We design and build data pipelines, dashboards and analytics platforms that give you a clear, real-time picture of your business performance.</p>
+          <ul class="service-list">
+            <li>Data warehouse &amp; pipeline design</li>
+            <li>Business intelligence dashboards</li>
+            <li>Power BI &amp; Tableau integration</li>
+            <li>Data cleansing &amp; migration</li>
+            <li>GDPR-compliant data management</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Process ────────────────────────────────────────────────────────── -->
+  <section class="services-process">
+    <div class="container">
+      <div class="section-label" data-reveal="fade">
+        <span class="text-label">How We Work</span>
+      </div>
+      <h2 class="text-headline" data-reveal="up">
+        Our process. <span class="grad-text">No surprises.</span>
+      </h2>
+
+      <div class="process-steps">
+
+        <div class="process-step" data-reveal="up" data-delay="100">
+          <div class="process-step-num">01</div>
+          <h4>Discovery</h4>
+          <p>We deep-dive into your goals, constraints and users. A thorough brief prevents expensive surprises later.</p>
+        </div>
+
+        <div class="process-step" data-reveal="up" data-delay="200">
+          <div class="process-step-num">02</div>
+          <h4>Design &amp; Architect</h4>
+          <p>Wireframes, prototypes, and system architecture reviewed and approved before any production code is written.</p>
+        </div>
+
+        <div class="process-step" data-reveal="up" data-delay="300">
+          <div class="process-step-num">03</div>
+          <h4>Build &amp; Iterate</h4>
+          <p>Agile sprints with fortnightly demos. You see progress early and often — and can steer as we go.</p>
+        </div>
+
+        <div class="process-step" data-reveal="up" data-delay="400">
+          <div class="process-step-num">04</div>
+          <h4>Launch &amp; Support</h4>
+          <p>Rigorous QA, smooth deployment, and ongoing support to keep your product performing at its best.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────────────────────────────── -->
+  <section style="padding: var(--section-py) 0;">
+    <div class="container">
+      <div class="cta-box" data-reveal="scale">
+        <div class="section-label" style="justify-content:center;margin-bottom:24px">
+          <span class="text-label">Let's Begin</span>
+        </div>
+        <h2 class="text-headline">
+          Not sure which service <span class="grad-text">you need?</span>
+        </h2>
+        <p>That's fine — we'll figure it out together. A free 30-minute call is the best place to start.</p>
+        <div class="cta-actions">
+          <a href="book.html" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+          <a href="contact.html" class="btn btn-ghost btn-lg">Send a Message</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.1rem">
+          <div class="nav-logo-mark">Q</div>
+          Quantum Global IT
+        </a>
+        <p>UK-based IT services company delivering world-class software, web, app and cloud solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Software Development</a></li>
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile Apps</a></li>
+          <li><a href="services.html">Cloud &amp; DevOps</a></li>
+          <li><a href="services.html">Cybersecurity</a></li>
+          <li><a href="services.html">IT Support</a></li>
+          <li><a href="services.html">Managed IT Services</a></li>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="book.html">Book a Meeting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@quantumglobal.co.uk">hello@quantumglobal.co.uk</a></li>
+          <li><a href="tel:+441234567890">+44 (0) 1234 567 890</a></li>
+          <li><a href="#">London, United Kingdom</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Quantum Global IT Services Ltd. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="GitHub">gh</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/scroll-anim.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

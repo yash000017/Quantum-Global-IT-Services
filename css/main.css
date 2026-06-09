@@ -1,0 +1,116 @@
+/* ==========================================================================
+   MAIN.CSS — Design system for Quantum Global IT Services
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+/* ——— Reset ————————————————————————————————————————————————————————————— */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  background: var(--bg-base);
+  color: var(--t1);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+button { font-family: inherit; cursor: none; border: none; background: none; }
+input, textarea, select { font-family: inherit; outline: none; }
+
+/* ——— Tokens ————————————————————————————————————————————————————————————— */
+:root {
+  /* Backgrounds */
+  --bg-base:     #020209;
+  --bg-raised:   #06060f;
+  --bg-overlay:  #0b0b1e;
+  --bg-glass:    rgba(6, 6, 20, 0.78);
+  --bg-card:     rgba(255, 255, 255, 0.028);
+  --bg-card-h:   rgba(255, 255, 255, 0.055);
+
+  /* Brand */
+  --cyan:        #00d4ff;
+  --cyan-dim:    rgba(0, 212, 255, 0.12);
+  --cyan-glow:   0 0 40px rgba(0, 212, 255, 0.3), 0 0 90px rgba(0, 212, 255, 0.1);
+  --purple:      #7c3aed;
+  --purple-dim:  rgba(124, 58, 237, 0.12);
+  --purple-glow: 0 0 40px rgba(124, 58, 237, 0.3);
+  --grad:        linear-gradient(130deg, var(--cyan) 0%, var(--purple) 100%);
+
+  /* Text */
+  --t1: #f0f0fa;
+  --t2: #6e6e8a;
+  --t3: #2e2e50;
+
+  /* Borders */
+  --border:   rgba(255, 255, 255, 0.07);
+  --border-b: rgba(255, 255, 255, 0.14);
+
+  /* Typography */
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+
+  /* Layout */
+  --section-py: clamp(80px, 10vw, 140px);
+  --px:         clamp(24px, 5vw, 80px);
+  --max-w:      1280px;
+
+  /* Motion */
+  --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ——— Layout ————————————————————————————————————————————————————————————— */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+section { position: relative; }
+
+/* ——— Typography ————————————————————————————————————————————————————————— */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+}
+.text-display {
+  font-size: clamp(3.2rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+}
+.text-headline { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; letter-spacing: -0.02em; }
+.text-title    { font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 500; letter-spacing: -0.015em; }
+.text-body     { font-size: 1.05rem; color: var(--t2); line-height: 1.8; font-weight: 300; }
+.text-small    { font-size: 0.875rem; color: var(--t2); font-weight: 400; }
+.text-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+/* Gradient text */
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ——— Scrollbar ————————————————————————————————————————————————————————— */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--t3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--t2); }
+
+/* ——— Selection ————————————————————————————————————————————————————————— */
+::selection { background: var(--cyan-dim); color: var(--cyan); }

@@ -1,0 +1,397 @@
+/* ==========================================================================
+   INNER.CSS — Styles for inner pages (about, services, contact, book)
+   ========================================================================== */
+
+/* ——— About Page ————————————————————————————————————————————————————————— */
+.about-mission {
+  padding: var(--section-py) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mission-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: -0.018em;
+  max-width: 900px;
+}
+
+.mission-text .highlight { color: var(--cyan); }
+
+.about-values {
+  padding: var(--section-py) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+/* Timeline */
+.about-journey {
+  padding: var(--section-py) 0;
+}
+
+.timeline {
+  margin-top: 64px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--cyan), var(--purple), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -46px;
+  top: 8px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg-base);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}
+
+.timeline-year {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+
+.timeline-item h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.timeline-item p { font-size: 0.9rem; color: var(--t2); line-height: 1.75; font-weight: 300; }
+
+/* Team */
+.about-team {
+  padding: var(--section-py) 0;
+  border-top: 1px solid var(--border);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.team-card {
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.team-avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--grad);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.team-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.team-card .role { font-size: 0.82rem; color: var(--cyan); margin-bottom: 12px; }
+.team-card p { font-size: 0.85rem; color: var(--t2); line-height: 1.6; }
+
+/* ——— Services Page ————————————————————————————————————————————————————— */
+.services-full {
+  padding: var(--section-py) 0;
+}
+
+.services-full-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.service-full-card {
+  padding: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-full-card::after {
+  content: attr(data-num);
+  position: absolute;
+  right: 28px; top: 24px;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--bg-overlay);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  transition: color 0.3s;
+}
+
+.service-full-card:hover::after { color: var(--bg-raised); }
+
+.service-full-card h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: -0.015em;
+  transition: color 0.2s;
+}
+
+.service-full-card:hover h3 { color: var(--cyan); }
+
+.service-full-card p { font-size: 0.92rem; color: var(--t2); line-height: 1.8; margin-bottom: 24px; font-weight: 300; }
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--t2);
+}
+
+.service-list li::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--cyan);
+  flex-shrink: 0;
+}
+
+/* Process */
+.services-process {
+  padding: var(--section-py) 0;
+  border-top: 1px solid var(--border);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 64px;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: 12.5%;
+  width: 75%;
+  height: 1px;
+  background: linear-gradient(to right, var(--cyan), var(--purple));
+  opacity: 0.3;
+}
+
+.process-step {
+  padding: 0 32px;
+  text-align: center;
+}
+
+.process-step-num {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cyan);
+  position: relative;
+  z-index: 1;
+  background: var(--bg-raised);
+}
+
+.process-step h4 { font-size: 1rem; font-weight: 500; margin-bottom: 10px; }
+.process-step p { font-size: 0.85rem; color: var(--t2); line-height: 1.75; font-weight: 300; }
+
+/* ——— Contact Page ————————————————————————————————————————————————————— */
+.contact-section {
+  padding: var(--section-py) 0;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-info { position: sticky; top: 120px; }
+
+.contact-info h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-bottom: 20px;
+}
+
+.contact-info > p {
+  font-size: 1rem;
+  color: var(--t2);
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-item-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--cyan-dim);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contact-item h4 { font-size: 0.78rem; font-weight: 600; color: var(--t2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.contact-item p  { font-size: 0.95rem; color: var(--t1); }
+
+.contact-form-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(32px, 4vw, 56px);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ——— Book a Meeting Page ——————————————————————————————————————————————— */
+.book-section {
+  padding: var(--section-py) 0;
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.book-info h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-bottom: 20px;
+}
+
+.book-info > p {
+  font-size: 1rem;
+  color: var(--t2);
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.meeting-types {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.meeting-type {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-card);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.meeting-type:hover {
+  border-color: var(--border-b);
+  background: var(--bg-card-h);
+}
+
+.meeting-type-icon { font-size: 1.3rem; }
+
+.meeting-type h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 2px; }
+.meeting-type p  { font-size: 0.8rem; color: var(--t2); }
+
+.book-form-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(32px, 4vw, 56px);
+}
+
+.book-form { display: flex; flex-direction: column; gap: 24px; }
+
+.form-submit-note {
+  font-size: 0.8rem;
+  color: var(--t3);
+  text-align: center;
+}
+
+/* ——— Responsive ————————————————————————————————————————————————————————— */
+@media (max-width: 1000px) {
+  .contact-layout  { grid-template-columns: 1fr; gap: 48px; }
+  .contact-info    { position: static; }
+  .book-layout     { grid-template-columns: 1fr; gap: 48px; }
+  .team-grid       { grid-template-columns: 1fr 1fr; }
+  .values-grid     { grid-template-columns: 1fr 1fr; }
+  .services-full-grid { grid-template-columns: 1fr; }
+  .process-steps   { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .process-steps::before { display: none; }
+}
+
+@media (max-width: 600px) {
+  .team-grid   { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .form-row    { grid-template-columns: 1fr; }
+}
