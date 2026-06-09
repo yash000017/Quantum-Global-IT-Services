@@ -172,14 +172,14 @@
 
             <div class="form-group">
               <label class="form-label">Meeting Type *</label>
-              <select class="form-select form-input" required>
+              <select class="form-select form-input" name="meeting_type" required>
                 <option value="" disabled selected>What's this about?</option>
-                <option>New Project Discovery</option>
-                <option>Technical Consultation</option>
-                <option>Partnership Exploration</option>
-                <option>Just an Idea</option>
-                <option>Pricing Enquiry</option>
-                <option>Other</option>
+                <option value="new-project-discovery">New Project Discovery</option>
+                <option value="technical-consultation">Technical Consultation</option>
+                <option value="partnership-exploration">Partnership Exploration</option>
+                <option value="just-an-idea">Just an Idea</option>
+                <option value="pricing-enquiry">Pricing Enquiry</option>
+                <option value="other">Other</option>
               </select>
             </div>
 
@@ -263,6 +263,8 @@
   <script src="js/cursor.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/scroll-anim.js"></script>
+  <script src="js/custom-select.js"></script>
+  <script src="js/form-validation.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

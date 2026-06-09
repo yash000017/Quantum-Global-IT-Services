@@ -6,7 +6,7 @@
 
 /* ——— Reset ————————————————————————————————————————————————————————————— */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: hidden; color-scheme: dark; }
 body {
   background: var(--bg-base);
   color: var(--t1);
@@ -49,6 +49,10 @@ input, textarea, select { font-family: inherit; outline: none; }
   /* Borders */
   --border:   rgba(255, 255, 255, 0.07);
   --border-b: rgba(255, 255, 255, 0.14);
+
+  /* Validation */
+  --error:     #ff6b6b;
+  --error-dim: rgba(255, 107, 107, 0.12);
 
   /* Typography */
   --font-display: 'Plus Jakarta Sans', sans-serif;

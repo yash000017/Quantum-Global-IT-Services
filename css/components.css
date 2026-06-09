@@ -397,12 +397,191 @@ body.cursor-text #cursor-ring {
   line-height: 1.6;
 }
 
-.form-select {
+.form-select:not(.custom-select__native) {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236e6e8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 40px;
+}
+
+/* ——— Custom Select ——————————————————————————————————————————————————————— */
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select__native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-select__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding-right: 18px;
+}
+
+.custom-select__trigger:focus,
+.custom-select__trigger:focus-visible {
+  border-color: var(--cyan);
+  background: var(--bg-card-h);
+  box-shadow: 0 0 0 3px var(--cyan-dim);
+}
+
+.custom-select__trigger.is-placeholder .custom-select__label {
+  color: var(--t3);
+}
+
+.custom-select__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.custom-select__chevron {
+  flex-shrink: 0;
+  color: var(--t2);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.custom-select.is-open .custom-select__chevron {
+  transform: rotate(180deg);
+  color: var(--cyan);
+}
+
+.custom-select.is-open .custom-select__trigger {
+  border-color: var(--cyan);
+  background: var(--bg-card-h);
+  box-shadow: 0 0 0 3px var(--cyan-dim);
+}
+
+.custom-select__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 200;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--bg-overlay);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  max-height: min(280px, 50vh);
+  overflow-y: auto;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  animation: customSelectIn 0.18s ease;
+}
+
+@keyframes customSelectIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-select__option {
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--t1);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.custom-select__option.is-focused {
+  background: var(--bg-card-h);
+}
+
+.custom-select__option.is-selected {
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+.custom-select__option.is-selected.is-focused {
+  background: rgba(0, 212, 255, 0.18);
+}
+
+/* ——— Form Validation ———————————————————————————————————————————————————— */
+.form-group.is-invalid .form-label {
+  color: var(--error);
+}
+
+.form-group.is-invalid .form-input,
+.form-group.is-invalid .form-textarea,
+.form-group.is-invalid .custom-select__trigger {
+  border-color: var(--error);
+  background: rgba(255, 107, 107, 0.04);
+  box-shadow: 0 0 0 3px var(--error-dim);
+}
+
+.form-group.is-invalid .form-input:focus,
+.form-group.is-invalid .form-textarea:focus,
+.form-group.is-invalid .custom-select__trigger:focus,
+.form-group.is-invalid .custom-select.is-open .custom-select__trigger {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.22);
+}
+
+.form-group.is-invalid .custom-select__chevron {
+  color: var(--error);
+}
+
+.form-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--error);
+  animation: formErrorIn 0.2s ease;
+}
+
+.form-error::before {
+  content: '';
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Ccircle cx='7' cy='7' r='6.25' stroke='%23ff6b6b' stroke-width='1.25'/%3E%3Cpath d='M7 4.2v3.1M7 9.1h.01' stroke='%23ff6b6b' stroke-width='1.25' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@keyframes formErrorIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ——— CTA Box (used on all pages) ———————————————————————————————————————— */

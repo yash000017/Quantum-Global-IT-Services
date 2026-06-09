@@ -20,10 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     new ParticleSystem('particle-canvas');
   }
 
+  /* ── Custom selects ──────────────────────────────────────────────────────── */
+  CustomSelect.initAll();
+
+  /* ── Form validation ───────────────────────────────────────────────────────── */
+  FormValidation.init();
+
   /* ── Contact / Book form handling ────────────────────────────────────────── */
   document.querySelectorAll('[data-form]').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!FormValidation.validateForm(form)) return;
       handleFormSubmit(form);
     });
   });
