@@ -196,6 +196,7 @@ function showFormSuccess(form, { title, message }) {
 
 function showFormError(message) {
   const error = document.createElement('div');
+  console.log(message);
   error.className = 'form-success';
   error.style.cssText = `
     position: fixed; inset: 0; z-index: 5000;
