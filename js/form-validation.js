@@ -6,6 +6,7 @@ class FormValidation {
   static init() {
     document.querySelectorAll('[data-form]').forEach(form => {
       form.setAttribute('novalidate', '');
+      FormValidation.markRequiredLabels(form);
 
       form.querySelectorAll('input, textarea, select').forEach(field => {
         field.addEventListener('input', () => FormValidation.validateField(field));
@@ -23,6 +24,23 @@ class FormValidation {
           FormValidation.clearForm(form);
         });
       });
+    });
+  }
+
+  static markRequiredLabels(form) {
+    form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
+      const group = field.closest('.form-group');
+      const label = group?.querySelector('.form-label');
+      if (!label || label.querySelector('.form-required')) return;
+
+      const labelText = label.textContent.trim().replace(/\s*\*$/, '');
+      label.textContent = labelText;
+
+      const mark = document.createElement('span');
+      mark.className = 'form-required';
+      mark.setAttribute('aria-hidden', 'true');
+      mark.textContent = ' *';
+      label.appendChild(mark);
     });
   }
 

@@ -508,6 +508,11 @@ body.cursor-text #cursor-ring {
   text-transform: uppercase;
 }
 
+.form-required {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
 .form-input,
 .form-textarea,
 .form-select {
