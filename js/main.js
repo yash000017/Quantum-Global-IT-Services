@@ -22,9 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     new ParallaxEffect();
   }
 
-  /* ── Particles (desktop homepage only) ───────────────────────────────────── */
+  /* ── Particles (desktop homepage only — load on demand) ────────────────── */
   if (!isMobile && !reduceMotion && document.getElementById('particle-canvas')) {
-    new ParticleSystem('particle-canvas');
+    const s = document.createElement('script');
+    s.src = 'js/particles.js';
+    s.onload = () => new ParticleSystem('particle-canvas');
+    document.body.appendChild(s);
   }
 
   /* ── Custom selects ──────────────────────────────────────────────────────── */

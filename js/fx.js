@@ -7,8 +7,9 @@ const COARSE = window.matchMedia('(pointer: coarse)').matches;
 
 class HeroFxParallax {
   constructor() {
+    if (REDUCE || COARSE || window.matchMedia('(max-width: 767px)').matches) return;
     this.layer = document.querySelector('.hero-float') || document.querySelector('.hero-fx');
-    if (!this.layer || REDUCE) return;
+    if (!this.layer) return;
     this.targetX = 0;
     this.targetY = 0;
     this.currentX = 0;
@@ -99,7 +100,7 @@ class LineDrawers {
 
 class AmbientDots {
   constructor() {
-    if (REDUCE) return;
+    if (REDUCE || COARSE || window.matchMedia('(max-width: 767px)').matches) return;
     const sections = document.querySelectorAll(
       '#services-preview, #why-us, #tech, #home-cta, .about-values, .about-journey, .about-team, .services-full, .services-process, .contact-section, .book-section'
     );

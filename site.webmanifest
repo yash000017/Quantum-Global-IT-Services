@@ -1,0 +1,31 @@
+{
+  "name": "Quantum Global IT Services Ltd",
+  "short_name": "Quantum Global IT",
+  "description": "UK IT solutions provider — software development, cloud, AI/ML, and IT consulting.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b3d5c",
+  "icons": [
+    {
+      "src": "/assets/favicon-48.png?v=3",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-96.png?v=3",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-192.png?v=3",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png?v=3",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
