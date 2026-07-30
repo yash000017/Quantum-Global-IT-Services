@@ -1,4 +1,18 @@
+# Robots.txt for Quantum Global IT Services
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
+# Sitemap location
 Sitemap: https://quantum-global-it.co.uk/sitemap.xml
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
