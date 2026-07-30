@@ -834,4 +834,31 @@
         rgba(255, 255, 255, 0.4) 100%
       );
   }
+
+  /* Mobile performance: reduce animations */
+  .hero-float,
+  .hero-orb-1,
+  .hero-orb-2,
+  .hero-3d__item,
+  .hero-fx__ring,
+  .hero-fx__glow {
+    animation: none !important;
+  }
+
+  .hero-float__orbit,
+  .hero-3d__cube,
+  .hero-3d__torus,
+  .hero-3d__diamond,
+  .hero-3d__pyramid,
+  .hero-3d__plane {
+    animation: none !important;
+  }
+
+  .tech-marquee {
+    animation: none;
+  }
+
+  .hero-bg__img {
+    animation: none !important;
+  }
 }

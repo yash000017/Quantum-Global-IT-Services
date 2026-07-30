@@ -73,9 +73,12 @@
   }
   </script>
 
-  <!-- Preconnect fonts -->
+  <!-- Performance: Preconnect and preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="assets/hero-bg-quantum.png" media="(min-width: 1024px)">
+  <link rel="preload" as="style" href="css/main.css">
+  <link rel="preload" as="style" href="css/home.css">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/main.css" />
@@ -144,7 +147,7 @@
   <!-- ── Hero ───────────────────────────────────────────────────────────── -->
   <section id="hero">
     <div class="hero-bg" aria-hidden="true">
-      <img src="assets/hero-bg-quantum.png" alt="" class="hero-bg__img" width="1920" height="1080">
+      <img src="assets/hero-bg-quantum.png" alt="" class="hero-bg__img" width="1920" height="1080" loading="eager" decoding="async">
       <div class="hero-bg__fade"></div>
     </div>
 
@@ -625,12 +628,12 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/particles.js"></script>
-  <script src="js/cursor.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/scroll-anim.js"></script>
-  <script src="js/fx.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/particles.js" defer></script>
+  <script src="js/cursor.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/scroll-anim.js" defer></script>
+  <script src="js/fx.js" defer></script>
+  <script src="js/main.js" defer></script>
 
 </body>
 </html>
