@@ -12,13 +12,13 @@ class ParticleSystem {
     this.RAF     = null;
 
     this.config = {
-      count:       80,
+      count: 110,
       speed:       0.4,
       minRadius:   1.2,
       maxRadius:   2.8,
       lineDistance:130,
-      lineOpacity: 0.12,
-      colors: ['#00d4ff', '#7c3aed', '#a78bfa', '#38bdf8'],
+      lineOpacity: 0.16,
+      colors: ['#0096c7', '#0277a0', '#38bdf8', '#0b3d5c'],
     };
 
     this.init();

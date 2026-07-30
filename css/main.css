@@ -2,11 +2,11 @@
    MAIN.CSS — Design system for Quantum Global IT Services
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* ——— Reset ————————————————————————————————————————————————————————————— */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; color-scheme: dark; }
+html { scroll-behavior: smooth; overflow-x: hidden; color-scheme: light; }
 body {
   background: var(--bg-base);
   color: var(--t1);
@@ -25,30 +25,31 @@ input, textarea, select { font-family: inherit; outline: none; }
 /* ——— Tokens ————————————————————————————————————————————————————————————— */
 :root {
   /* Backgrounds */
-  --bg-base:     #020209;
-  --bg-raised:   #06060f;
-  --bg-overlay:  #0b0b1e;
-  --bg-glass:    rgba(6, 6, 20, 0.78);
-  --bg-card:     rgba(255, 255, 255, 0.028);
-  --bg-card-h:   rgba(255, 255, 255, 0.055);
+  --bg-base:     #ffffff;
+  --bg-raised:   #f8f9fc;
+  --bg-overlay:  #f0f2f8;
+  --bg-glass:    rgba(255, 255, 255, 0.95);
+  --bg-card:     rgba(0, 0, 0, 0.03);
+  --bg-card-h:   rgba(0, 0, 0, 0.05);
 
-  /* Brand */
-  --cyan:        #00d4ff;
-  --cyan-dim:    rgba(0, 212, 255, 0.12);
-  --cyan-glow:   0 0 40px rgba(0, 212, 255, 0.3), 0 0 90px rgba(0, 212, 255, 0.1);
-  --purple:      #7c3aed;
-  --purple-dim:  rgba(124, 58, 237, 0.12);
-  --purple-glow: 0 0 40px rgba(124, 58, 237, 0.3);
-  --grad:        linear-gradient(130deg, var(--cyan) 0%, var(--purple) 100%);
+  /* Brand — cool steel / cyan tech (no purple rainbow) */
+  --cyan:        #0096c7;
+  --cyan-dim:    rgba(0, 150, 199, 0.12);
+  --cyan-glow:   0 0 40px rgba(0, 150, 199, 0.22), 0 0 90px rgba(0, 150, 199, 0.08);
+  --purple:      #0b3d5c; /* deep steel — legacy token name */
+  --purple-dim:  rgba(11, 61, 92, 0.12);
+  --purple-glow: 0 0 40px rgba(11, 61, 92, 0.2);
+  --grad:        linear-gradient(135deg, #00a8c8 0%, #0277a0 50%, #0b3d5c 100%);
+  --grad-soft:   linear-gradient(135deg, rgba(0, 168, 200, 0.08) 0%, rgba(11, 61, 92, 0.06) 100%);
 
   /* Text */
-  --t1: #f0f0fa;
-  --t2: #6e6e8a;
-  --t3: #2e2e50;
+  --t1: #0f1419;
+  --t2: #6b7280;
+  --t3: #9ca3af;
 
   /* Borders */
-  --border:   rgba(255, 255, 255, 0.07);
-  --border-b: rgba(255, 255, 255, 0.14);
+  --border:   rgba(0, 0, 0, 0.08);
+  --border-b: rgba(0, 0, 0, 0.12);
 
   /* Validation */
   --error:     #ff6b6b;
@@ -57,6 +58,8 @@ input, textarea, select { font-family: inherit; outline: none; }
   /* Typography */
   --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body:    'Plus Jakarta Sans', sans-serif;
+  --font-tech:    'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
   /* Layout */
   --section-py: clamp(80px, 10vw, 140px);

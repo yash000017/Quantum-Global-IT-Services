@@ -125,3 +125,292 @@
 .anim-float    { animation: float 6s ease-in-out infinite; }
 .anim-spin     { animation: spin-slow 20s linear infinite; }
 .anim-pulse    { animation: glow-pulse 3s ease-in-out infinite; }
+
+@keyframes nodePulse {
+  0%, 100% { transform: scale(1); opacity: 0.75; box-shadow: 0 0 10px rgba(0, 168, 200, 0.45); }
+  50%       { transform: scale(1.55); opacity: 1; box-shadow: 0 0 22px rgba(0, 168, 200, 0.9); }
+}
+
+@keyframes floatChip {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50%       { transform: translateY(-14px) translateX(6px); }
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: -120; }
+}
+
+@keyframes sparkBlink {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50%       { opacity: 1; transform: scale(1.25); }
+}
+
+@keyframes shineSweep {
+  0%   { transform: translateX(-120%) skewX(-18deg); }
+  100% { transform: translateX(220%) skewX(-18deg); }
+}
+
+@keyframes softBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* Card / button motion polish */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-120%) skewX(-18deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.card:hover::after {
+  opacity: 1;
+  animation: shineSweep 0.85s var(--ease);
+}
+
+.card-icon {
+  transition: transform 0.35s var(--spring), box-shadow 0.35s;
+}
+
+.card:hover .card-icon {
+  transform: translateY(-4px) scale(1.06);
+}
+
+.btn-primary {
+  background-size: 180% 180%;
+  animation: gradientShift 6s ease infinite;
+}
+
+.stat-item.is-visible .stat-number {
+  animation: count-up 0.6s var(--ease) both;
+}
+
+.tech-pill {
+  transition: border-color 0.25s, color 0.25s, transform 0.25s var(--ease), box-shadow 0.25s;
+}
+
+.tech-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(2, 119, 160, 0.12);
+  border-color: rgba(0, 168, 200, 0.35);
+  color: var(--cyan);
+}
+
+.section-label.is-visible::before,
+.section-label[data-reveal].is-visible::before {
+  animation: lineGrow 0.7s var(--ease) both;
+}
+
+/* Page hero floating accents */
+.page-fx {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-fx__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: softBob 7s ease-in-out infinite, glow-pulse 4s ease-in-out infinite;
+}
+
+.page-fx__orb--1 {
+  width: 14px; height: 14px;
+  background: var(--cyan);
+  top: 28%; right: 18%;
+  box-shadow: 0 0 20px rgba(0, 168, 200, 0.6);
+}
+
+.page-fx__orb--2 {
+  width: 10px; height: 10px;
+  background: #0277a0;
+  top: 48%; right: 10%;
+  animation-delay: 1s;
+  box-shadow: 0 0 16px rgba(2, 119, 160, 0.55);
+}
+
+.page-fx__orb--3 {
+  width: 8px; height: 8px;
+  background: var(--cyan);
+  bottom: 30%; right: 24%;
+  animation-delay: 1.8s;
+}
+
+.page-fx__ring {
+  position: absolute;
+  right: 8%;
+  top: 42%;
+  width: min(34vw, 280px);
+  height: min(34vw, 280px);
+  border: 1px solid rgba(0, 150, 199, 0.16);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: spin-slow 40s linear infinite;
+}
+
+.page-fx__ring::after {
+  content: '';
+  position: absolute;
+  inset: 16%;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 150, 199, 0.2);
+  animation: spin-slow 26s linear infinite reverse;
+}
+
+@media (max-width: 700px) {
+  .page-fx__ring { opacity: 0.35; right: -10%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-fx, .hero-float, .hero-3d, .page-fx, .site-progress, .ambient-dots { display: none !important; }
+}
+
+/* ——— Site-wide cool motion ——————————————————————————————————————————— */
+.site-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 2000;
+  background: linear-gradient(90deg, #00a8c8, #0277a0, #0b3d5c);
+  box-shadow: 0 0 12px rgba(0, 168, 200, 0.45);
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+
+.ambient-dots {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-dots + .container,
+.ambient-dots ~ .container,
+.ambient-dots ~ .stats-inner,
+.ambient-dots ~ .why-us-inner,
+.ambient-dots ~ .tech-marquee-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.ambient-dots span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 150, 199, 0.35);
+  box-shadow: 0 0 12px rgba(0, 168, 200, 0.35);
+  animation: softBob 5s ease-in-out infinite, glow-pulse 3.5s ease-in-out infinite;
+}
+
+.tag {
+  transition: transform 0.25s var(--ease), border-color 0.25s, color 0.25s, background 0.25s;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 168, 200, 0.4);
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+.why-feature {
+  transition: transform 0.35s var(--ease);
+}
+
+.why-feature.is-visible {
+  animation: fadeUp 0.7s var(--ease) both;
+}
+
+.why-feature:hover {
+  transform: translateX(6px);
+}
+
+.why-feature-num {
+  transition: transform 0.3s var(--spring);
+}
+
+.why-feature:hover .why-feature-num {
+  transform: scale(1.15);
+}
+
+.team-avatar {
+  transition: transform 0.4s var(--spring), box-shadow 0.4s;
+}
+
+.team-card:hover .team-avatar {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 12px 30px rgba(2, 119, 160, 0.25);
+}
+
+.contact-item,
+.meeting-type {
+  transition: transform 0.3s var(--ease), border-color 0.3s, background 0.3s;
+}
+
+.contact-item:hover,
+.meeting-type:hover {
+  transform: translateY(-3px);
+}
+
+.footer-social a {
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.25s var(--spring);
+}
+
+.footer-social a:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.stat-item {
+  transition: transform 0.35s var(--ease);
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+.service-number,
+.service-full-card::after {
+  transition: color 0.35s, transform 0.35s var(--ease);
+}
+
+.service-full-card:hover::after {
+  transform: scale(1.05);
+}
+
+.text-headline .grad-text,
+.grad-text {
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+}

@@ -50,6 +50,13 @@
   bottom: 0;
   width: 1px;
   background: linear-gradient(to bottom, var(--cyan), var(--purple), transparent);
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.2s var(--ease);
+}
+
+.timeline.is-drawn::before {
+  transform: scaleY(1);
 }
 
 .timeline-item {
@@ -66,7 +73,18 @@
   border-radius: 50%;
   background: var(--bg-base);
   border: 2px solid var(--cyan);
-  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0, 168, 200, 0.4);
+  transition: transform 0.35s var(--spring), box-shadow 0.35s, background 0.35s;
+}
+
+.timeline-item.is-visible::before {
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.25);
+  background: var(--cyan);
+  box-shadow: 0 0 20px rgba(0, 168, 200, 0.7);
 }
 
 .timeline-year {
@@ -94,14 +112,24 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 64px;
+  margin: 64px auto 0;
+  justify-items: center;
+  justify-content: center;
+  max-width: 900px;
 }
 
 .team-card {
   text-align: center;
   padding: 36px 24px;
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .team-avatar {
@@ -118,9 +146,29 @@
   color: #fff;
 }
 
-.team-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-.team-card .role { font-size: 0.82rem; color: var(--cyan); margin-bottom: 12px; }
-.team-card p { font-size: 0.85rem; color: var(--t2); line-height: 1.6; }
+.team-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-align: center;
+  width: 100%;
+}
+
+.team-card .role {
+  font-size: 0.82rem;
+  color: var(--cyan);
+  margin-bottom: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.team-card p {
+  font-size: 0.85rem;
+  color: var(--t2);
+  line-height: 1.6;
+  text-align: justify;
+  width: 100%;
+}
 
 /* ——— Services Page ————————————————————————————————————————————————————— */
 .services-full {
@@ -147,13 +195,13 @@
   font-family: var(--font-display);
   font-size: 5rem;
   font-weight: 800;
-  color: var(--bg-overlay);
+  color: rgba(0, 168, 216, 0.28);
   line-height: 1;
   letter-spacing: -0.04em;
   transition: color 0.3s;
 }
 
-.service-full-card:hover::after { color: var(--bg-raised); }
+.service-full-card:hover::after { color: rgba(0, 168, 216, 0.45); }
 
 .service-full-card h3 {
   font-size: 1.3rem;
@@ -212,6 +260,13 @@
   height: 1px;
   background: linear-gradient(to right, var(--cyan), var(--purple));
   opacity: 0.3;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.1s var(--ease);
+}
+
+.process-steps.is-drawn::before {
+  transform: scaleX(1);
 }
 
 .process-step {
@@ -235,6 +290,19 @@
   position: relative;
   z-index: 1;
   background: var(--bg-raised);
+  transition: transform 0.35s var(--spring), box-shadow 0.35s, border-color 0.35s, background 0.35s;
+}
+
+.process-step.is-visible .process-step-num {
+  animation: softBob 4s ease-in-out infinite;
+}
+
+.process-step:hover .process-step-num {
+  transform: scale(1.1);
+  border-color: var(--cyan);
+  background: var(--cyan-dim);
+  box-shadow: 0 0 24px rgba(0, 168, 200, 0.25);
+  animation: none;
 }
 
 .process-step h4 { font-size: 1rem; font-weight: 500; margin-bottom: 10px; }
@@ -383,7 +451,7 @@
   .contact-layout  { grid-template-columns: 1fr; gap: 48px; }
   .contact-info    { position: static; }
   .book-layout     { grid-template-columns: 1fr; gap: 48px; }
-  .team-grid       { grid-template-columns: 1fr 1fr; }
+  .team-grid       { grid-template-columns: repeat(3, 1fr); }
   .values-grid     { grid-template-columns: 1fr 1fr; }
   .services-full-grid { grid-template-columns: 1fr; }
   .process-steps   { grid-template-columns: 1fr 1fr; gap: 40px; }
