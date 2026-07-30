@@ -4,8 +4,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Cursor ────────────────────────────────────────────────────────────── */
-  new CustomCursor();
+  const isMobile = window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Cursor (desktop only) ─────────────────────────────────────────────── */
+  if (!isMobile && !reduceMotion) {
+    new CustomCursor();
+  }
 
   /* ── Navigation ─────────────────────────────────────────────────────────── */
   new Navigation();
@@ -13,10 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Scroll Animations ───────────────────────────────────────────────────── */
   window._scrollAnimator = new ScrollAnimator();
   new CounterAnimator();
-  new ParallaxEffect();
+  if (!isMobile) {
+    new ParallaxEffect();
+  }
 
-  /* ── Particles (homepage only) ───────────────────────────────────────────── */
-  if (document.getElementById('particle-canvas')) {
+  /* ── Particles (desktop homepage only) ───────────────────────────────────── */
+  if (!isMobile && !reduceMotion && document.getElementById('particle-canvas')) {
     new ParticleSystem('particle-canvas');
   }
 

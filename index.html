@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantum Global IT Services Ltd | UK Software & Web Development | IT Solutions</title>
-  <meta name="description" content="Quantum Global IT Services — UK's leading IT solutions provider. Expert software development, web apps, cloud infrastructure, AI/ML, and IT consulting for UK businesses." />
+  <title>UK IT Services & Software Development | Quantum Global</title>
+  <meta name="description" content="UK IT solutions provider specializing in software development, web apps, cloud infrastructure, AI/ML, and IT consulting. Quantum Global IT Services Ltd." />
   <meta name="keywords" content="UK IT services, software development UK, web development London, IT consulting UK, cloud solutions, AI development, digital transformation, IT support" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Quantum Global IT Services Ltd" />
@@ -12,22 +12,22 @@
   <meta name="geo.region" content="GB-LND" />
   <meta name="geo.placename" content="London, United Kingdom" />
   <link rel="canonical" href="https://quantum-global-it.co.uk/" />
-  <link rel="alternate" hreflang="en-gb" href="https://quantum-global-it.co.uk/" />
+  <link rel="alternate" hreflang="en-GB" href="https://quantum-global-it.co.uk/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Quantum Global IT Services Ltd" />
   <meta property="og:locale" content="en_GB" />
-  <meta property="og:title" content="Quantum Global IT Services Ltd | UK Software & Web Development | IT Solutions" />
-  <meta property="og:description" content="Quantum Global IT Services — UK's leading IT solutions provider. Expert software development, web apps, cloud infrastructure, AI/ML, and IT consulting for UK businesses." />
+  <meta property="og:title" content="UK IT Services & Software Development | Quantum Global" />
+  <meta property="og:description" content="UK IT solutions provider specializing in software development, web apps, cloud infrastructure, AI/ML, and IT consulting." />
   <meta property="og:url" content="https://quantum-global-it.co.uk/" />
   <meta property="og:image" content="https://quantum-global-it.co.uk/assets/logo-mark.png?v=2" />
   <meta property="og:image:alt" content="Quantum Global IT Services - UK IT Solutions Provider" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Quantum Global IT Services Ltd | UK Software & Web Development" />
-  <meta name="twitter:description" content="UK's leading IT solutions provider specializing in software development, web apps, cloud infrastructure, AI/ML, and IT consulting for businesses." />
+  <meta name="twitter:title" content="UK IT Services & Software Development | Quantum Global" />
+  <meta name="twitter:description" content="UK IT solutions provider specializing in software development, web apps, cloud infrastructure, AI/ML, and IT consulting." />
   <meta name="twitter:image" content="https://quantum-global-it.co.uk/assets/logo-mark.png?v=2" />
   <meta name="twitter:image:alt" content="Quantum Global IT Services - UK IT Solutions Provider" />
 
@@ -102,12 +102,14 @@
   }
   </script>
 
-  <!-- Performance: Preconnect and preload -->
+  <!-- Performance: Preconnect, fonts, LCP preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="assets/hero-bg-quantum.png" media="(min-width: 1024px)">
-  <link rel="preload" as="style" href="css/main.css">
-  <link rel="preload" as="style" href="css/home.css">
+  <link rel="preload" as="image" type="image/webp" href="assets/hero-bg-quantum-mobile.webp" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" href="assets/hero-bg-quantum.webp" media="(min-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@600&display=swap" /></noscript>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/main.css" />
@@ -129,7 +131,7 @@
   <!-- ── Navigation ────────────────────────────────────────────────────── -->
   <nav id="nav">
     <a href="index.html" class="nav-logo">
-      <img src="assets/Quantum Global IT Logo (1).png" alt="Quantum Global IT Services - UK IT Solutions Provider" class="nav-logo-img">
+      <img src="assets/logo-nav.webp" alt="Quantum Global IT Services - UK IT Solutions Provider" class="nav-logo-img">
     </a>
 
     <ul class="nav-links">
@@ -153,7 +155,7 @@
     <div class="nav-mobile__panel" role="dialog" aria-modal="true" aria-label="Site navigation">
       <div class="nav-mobile__header">
         <a href="index.html" class="nav-mobile__logo nav-logo">
-          <img src="assets/Quantum Global IT Logo (1).png" alt="Quantum Global IT Services - UK IT Solutions Provider" class="nav-logo-img">
+          <img src="assets/logo-nav.webp" alt="Quantum Global IT Services - UK IT Solutions Provider" class="nav-logo-img">
         </a>
         <button type="button" class="nav-mobile__close" id="nav-mobile-close" aria-label="Close menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -176,7 +178,19 @@
   <!-- ── Hero ───────────────────────────────────────────────────────────── -->
   <section id="hero">
     <div class="hero-bg" aria-hidden="true">
-      <img src="assets/hero-bg-quantum.png" alt="" class="hero-bg__img" width="1920" height="1080" loading="eager" decoding="async">
+      <picture>
+        <source media="(max-width: 767px)" type="image/webp" srcset="assets/hero-bg-quantum-mobile.webp" />
+        <source type="image/webp" srcset="assets/hero-bg-quantum.webp" />
+        <img
+          src="assets/hero-bg-quantum.png"
+          alt="Quantum Global IT Services hero background"
+          class="hero-bg__img"
+          width="1536"
+          height="1024"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
       <div class="hero-bg__fade"></div>
     </div>
 
@@ -605,7 +619,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" style="font-size:1.1rem">
-          <img src="assets/Quantum Global IT Logo (1).png" alt="Quantum Global IT Services - UK IT Solutions Provider" class="nav-logo-img">
+          <img src="assets/logo-nav.webp" alt="Quantum Global IT Services - UK IT Solutions Provider" class="nav-logo-img">
         </a>
         <p>Quantum Global IT Services Ltd — delivering world-class software, web, app and cloud solutions across the UK.</p>
       </div>
