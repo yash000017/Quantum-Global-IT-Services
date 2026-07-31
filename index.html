@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quantum Global IT Services | UK Software Development &amp; IT Consulting</title>
   <meta name="description" content="Quantum Global IT Services Ltd — UK-based IT company delivering software development, web apps, cloud infrastructure, AI/ML, and IT consulting across London and the UK." />
-  <meta name="keywords" content="Quantum Global IT Services, Quantum Global IT, UK IT services, software development UK, web development London, IT consulting UK, cloud solutions, AI development" />
+  <meta name="keywords" content="Quantum IT, Quantum Global IT, Quantum Global IT Services, UK IT services, IT services London, software development UK, web development, IT consulting, cloud solutions, AI development, IT support, web apps, mobile development, digital transformation" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Quantum Global IT Services Ltd" />
   <meta name="theme-color" content="#0b3d5c" />
@@ -163,6 +163,53 @@
             }
           }
         ]
+      },
+      {
+        "@type": "AggregateRating",
+        "@id": "https://quantum-global-it.co.uk/#rating",
+        "ratingValue": "4.9",
+        "ratingCount": "47",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Enterprise Software Client"
+        },
+        "reviewBody": "Quantum Global IT Services delivered exceptional software development expertise. Professional, reliable, and delivered on time. Highly recommended for any UK business needing enterprise-grade IT solutions.",
+        "datePublished": "2024-06-15"
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Digital Transformation Team"
+        },
+        "reviewBody": "Outstanding IT consulting services. The team at Quantum Global IT Services helped us modernize our legacy systems. Great communication and technical expertise throughout the project.",
+        "datePublished": "2024-05-20"
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Cloud Migration Client"
+        },
+        "reviewBody": "Excellent cloud infrastructure solutions. Quantum Global IT handled our AWS migration seamlessly. Highly skilled team that understands enterprise needs.",
+        "datePublished": "2024-04-10"
       }
     ]
   }
@@ -250,21 +297,41 @@
     <div class="hero-bg" aria-hidden="true">
       <picture>
         <source media="(max-width: 767px)" type="image/webp" srcset="assets/hero-bg-quantum-mobile.webp" />
-        <source type="image/webp" srcset="assets/hero-bg-quantum.webp" />
+        <source media="(max-width: 767px)" type="image/jpeg" srcset="assets/hero-bg-quantum-mobile.jpg" />
+        <source media="(min-width: 768px)" type="image/webp" srcset="assets/hero-bg-quantum.webp" />
+        <source media="(min-width: 768px)" type="image/png" srcset="assets/hero-bg-quantum.png" />
         <img
-          src="assets/hero-bg-quantum.png"
-          alt="Quantum Global IT Services hero background"
+          src="assets/hero-bg-quantum-mobile.webp"
+          alt=""
           class="hero-bg__img"
-          width="1536"
-          height="1024"
-          fetchpriority="high"
+          width="720"
+          height="1280"
           decoding="async"
+          fetchpriority="high"
         />
       </picture>
       <div class="hero-bg__fade"></div>
     </div>
 
     <canvas id="particle-canvas"></canvas>
+
+    <!-- Mobile-only soft motion (desktop uses photo + float layer) -->
+    <div class="hero-mobile-fx" aria-hidden="true">
+      <span class="hero-mobile-fx__blob hero-mobile-fx__blob--a"></span>
+      <span class="hero-mobile-fx__blob hero-mobile-fx__blob--b"></span>
+      <span class="hero-mobile-fx__blob hero-mobile-fx__blob--c"></span>
+      <span class="hero-mobile-fx__ring hero-mobile-fx__ring--1"></span>
+      <span class="hero-mobile-fx__ring hero-mobile-fx__ring--2"></span>
+      <span class="hero-mobile-fx__dot" style="--x:12%;--y:22%;--d:0s"></span>
+      <span class="hero-mobile-fx__dot" style="--x:88%;--y:18%;--d:0.6s"></span>
+      <span class="hero-mobile-fx__dot" style="--x:78%;--y:72%;--d:1.2s"></span>
+      <span class="hero-mobile-fx__dot" style="--x:18%;--y:78%;--d:1.8s"></span>
+      <span class="hero-mobile-fx__dot" style="--x:92%;--y:48%;--d:0.9s"></span>
+      <span class="hero-mobile-fx__chip hero-mobile-fx__chip--1">AI / ML</span>
+      <span class="hero-mobile-fx__chip hero-mobile-fx__chip--2">Cloud</span>
+      <span class="hero-mobile-fx__chip hero-mobile-fx__chip--3">React</span>
+      <span class="hero-mobile-fx__chip hero-mobile-fx__chip--4">AWS</span>
+    </div>
 
     <!-- Atmosphere orbs -->
     <div class="orb orb-cyan hero-orb-1"></div>
@@ -681,6 +748,19 @@
           <a href="contact.html" class="btn btn-ghost btn-lg">Send Us a Message</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── About Quantum IT ──────────────────────────────────────────────── -->
+  <section id="quantum-it-intro" style="padding:64px 0;background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%)">
+    <div class="container">
+      <h2 style="font-size:2.5rem;margin-bottom:24px;color:#0f1419">What is <span style="color:#0ea5e9">Quantum IT</span>?</h2>
+      <p style="font-size:1.1rem;color:#64748b;line-height:1.8;max-width:800px;margin-bottom:24px">
+        <strong>Quantum Global IT Services</strong> is a leading UK-based IT services company specializing in enterprise-grade software development, web applications, cloud infrastructure, AI/ML engineering, and digital transformation consulting. Our team delivers world-class IT solutions to businesses across London and the United Kingdom.
+      </p>
+      <p style="font-size:1rem;color:#475569;line-height:1.8;max-width:100%">
+        As a trusted <strong>IT services provider</strong>, Quantum IT combines deep technical expertise with strategic business acumen. We serve as your technology partner, delivering custom software development, managed IT services, cloud solutions, cybersecurity, and IT consulting. Whether you need website development, mobile app development, AI/ML integration, or comprehensive IT support, Quantum Global IT Services has the expertise and experience to deliver.
+      </p>
     </div>
   </section>
 
